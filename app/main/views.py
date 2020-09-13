@@ -24,3 +24,16 @@ def index():
                            Entertainment=entertainment_news, Sports=sports_news, Tech=tech_news,
                            Science=science_news, Health=health_news)
 
+
+
+@main.route('/articles/<source_id>&<int:per_page>')
+def articles(source_id, per_page):
+    '''
+    Function that returns articles based on their sources
+    '''
+
+    news_source = get_articles(source_id, per_page)
+    title = f'{source_id} | All Articles'
+    return render_template('articles.html', title=title, name=source_id, news=news_source)
+
+
