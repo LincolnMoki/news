@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <style>
+        body{
+            background-image: url('{{url_for("static",filename="images/404_error.gif")}}');
+            background-repeat: no-repeat;
+            background-position-x: center;
+            height: 100vh;
+        }
+    </style>
+{% endblock %}
