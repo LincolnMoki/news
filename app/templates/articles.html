@@ -14,3 +14,20 @@
                     <img class="thumbnail img-el img-fluid" src={{article.urlToImage}} alt="IMAGE LOADING...">
                 </a>
             </div>
+            <div class="words">
+                <h4 class="text-bold"> {{article.title}} </h4>
+                <p>Posted by
+                    <span class="text-muted date-author">{{article.author}}</span>
+                    on
+                    <span class="text-muted date-author">{{article.publishedAt}}</span>
+                </p>
+                <p> {{article.description}}...
+                    <a href={{article.url}} target="_blank"><button type="button" class="btn btn-outline-primary">Read more</button></a>
+                </p>
+                <hr>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"> {% endblock%}
