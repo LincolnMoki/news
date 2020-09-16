@@ -1,7 +1,7 @@
 import os
 
 
-class config:
+class Config:
     '''
     General configuration parent class
     '''
@@ -12,7 +12,7 @@ class config:
     EVERYTHING_SEARCH_URL = 'https://newsapi.org/v2/everything?q={}&pageSize={}&apiKey={}'
 
     NEWS_API_KEY = os.environ.get('NEWS_API_KEY')
-    #SECRET_KEY = os.environ.get('SECRET_KEY')
+    SECRET_KEY = os.environ.get('SECRET_KEY')
 
 class ProdConfig(Config):
     '''
@@ -35,7 +35,7 @@ class DevConfig(Config):
     DEBUG = True
 
 
- config_options = {
+config_options = {
     'development': DevConfig,
     'production': ProdConfig
-}   
+ }
